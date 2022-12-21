@@ -7,9 +7,12 @@ set wrap
 " Color scheme
 colorscheme slate
 
+" Set the window's title to the current file being edited
+set title
+
 " Status bar
-set laststatus=2
-set statusline+=%f
+"set laststatus=2
+"set statusline+=%f
 
 " show number lines
 set number
@@ -42,3 +45,16 @@ set hlsearch
 " Ignore case when searching
 set ignorecase
 
+" Fold based on indent
+set foldmethod=indent
+
+" Override fold method for a particular file type
+" autocmd FileType javascript setlocal foldmethod=marker
+
+" Store temp files in /tmp
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
+" Enable spell checking
+set spell
