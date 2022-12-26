@@ -1,24 +1,35 @@
-" Syntax highlighting
-syntax on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer:
+"     Taylor Koressel - @koressel
+"
+" Sections:
+"    -> General
+"    -> VIM user interface
+"    -> Colors and fonts
+"    -> Files and backups
+"    -> Text, tab, and indent related
+"    -> Moving around, tabs, and buffers
+"    -> Status line
+"    -> Editing mappings
+"    -> Spell checking
+"    -> Misc
+"    -> Helper functions
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Exit insert mode with jj
-imap jj <Esc>
 
-" Color scheme
-colorscheme slate
-
-" Display a ruler
-set colorcolumn=95
-highlight ColorColumn ctermbg=0
-
-" Max history
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets how many lines of history to remember
 set history=50
 
-" Ignore the files when completing names in Explorer
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 
-" netrw list style
-let g:netrw_liststyle = 4
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Show menu when possible tab completions
+set wildmenu
 
 " Ignore case when searching
 set ignorecase
@@ -26,22 +37,49 @@ set ignorecase
 " Only ignore case when you type lower case when searching
 set smartcase
 
-" Show menu when possible tab completions
-set wildmenu
+" Ignore the files when completing names in Explorer
+set wildignore=.svn,.git,*.o,*.a,*.class,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 
-" Remove netrw banner
-let g:netrw_banner = 0
+" Ignore case when searching
+set ignorecase
+
+" Fold based on indent
+set foldmethod=indent
 
 " Auto wrap text
 set wrap
 
-" Status bar
-set laststatus=2
-set statusline+=%f
 
-" show number lines
-set number
-"set relativenumber
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color scheme
+colorscheme slate
+
+" Syntax highlighting
+syntax on
+
+" Enable search highlighting
+set hlsearch
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files and backups
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Store temp files in /tmp
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab, and indent related
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Insert tabstop number of spaces when tab is pressed
+set smarttab
+
+" Indent using four spaces
+set tabstop=4
 
 " New lines inherit indentation of previous lines
 set autoindent
@@ -55,45 +93,38 @@ set shiftround
 " Indent with 4 spaces
 set shiftwidth=4
 
-" Insert tabstop number of spaces when tab is pressed
-set smarttab
 
-" Indent using four spaces
-set tabstop=4
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status bar
+set laststatus=2
+set statusline+=%f
+
+
+" Exit insert mode with jj
+imap jj <Esc>
+
+" netrw list style
+let g:netrw_liststyle = 4
+
+" Remove netrw banner
+let g:netrw_banner = 0
+
+" show number lines
+set number
+"set relativenumber
 
 " Fix startup comfirmation prompt
 set shortmess=a
 set cmdheight=2
 
-" Enable search highlighting
-set hlsearch
 
-" Ignore case when searching
-set ignorecase
+" These are sometimes useful
 
-" Fold based on indent
-set foldmethod=indent
-
-" Store temp files in /tmp
-set backupdir=/tmp//
-set directory=/tmp//
-set undodir=/tmp//
-
-" Some other useful options
-
-" Set the window's title to the current file being edited
-"set titlestring=%F
-
-" NERDtree like settings for netrw
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
+" Display a ruler
+"set colorcolumn=95
+"highlight ColorColumn ctermbg=6
 
 " Enable spell checking
 "set spell
