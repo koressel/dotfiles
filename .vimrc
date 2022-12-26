@@ -1,21 +1,47 @@
 " Syntax highlighting
 syntax on
 
-" Auto wrap text
-set wrap
+" Exit insert mode with jj
+imap jj <Esc>
 
 " Color scheme
 colorscheme slate
 
-" Set the window's title to the current file being edited
-set title
+" Display a ruler
+set colorcolumn=95
+highlight ColorColumn ctermbg=0
+
+" Max history
+set history=50
+
+" Ignore the files when completing names in Explorer
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+
+" netrw list style
+let g:netrw_liststyle = 4
+
+" Ignore case when searching
+set ignorecase
+
+" Only ignore case when you type lower case when searching
+set smartcase
+
+" Show menu when possible tab completions
+set wildmenu
+
+" Remove netrw banner
+let g:netrw_banner = 0
+
+" Auto wrap text
+set wrap
 
 " Status bar
-"set laststatus=2
-"set statusline+=%f
+set laststatus=2
+set statusline+=%f
 
 " show number lines
 set number
+"set relativenumber
 
 " New lines inherit indentation of previous lines
 set autoindent
@@ -48,13 +74,26 @@ set ignorecase
 " Fold based on indent
 set foldmethod=indent
 
-" Override fold method for a particular file type
-" autocmd FileType javascript setlocal foldmethod=marker
-
 " Store temp files in /tmp
 set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
+" Some other useful options
+
+" Set the window's title to the current file being edited
+"set titlestring=%F
+
+" NERDtree like settings for netrw
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
 " Enable spell checking
-set spell
+"set spell
